@@ -7,3 +7,4 @@ Dentro do diretório docs contém todos os documentos sobre a documentação do 
 ## Equipe
 
  - José Ediberto do Nascimento Júnior 433423
+ - Maria Eline Silva de Farias 392025
