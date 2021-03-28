@@ -11,14 +11,12 @@ function Register() {
   }
 
   return (
-    <>
-      <h1>
-        Tela de Cadastro
-      </h1>
-      <button type="button" onClick={handleCadastro}>
-        Cadastrar
-      </button>
-    </>
+    <container>
+      <h1>Cadastro</h1>
+      <input id="name" placeholder="Nome"/>
+        <input id="password" placeholder="Senha"/>
+      <button className="btt btt-login" type="button" onClick={handleCadastro}>Cadastrar</button>
+    </container>
   )
 }
 

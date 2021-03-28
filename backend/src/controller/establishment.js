@@ -26,7 +26,28 @@ function findPerson(idx,cpf){
     }
 
     if(idi !== -1){
-        return establishments[idx].customers[j];
+        return establishments[idx].customers[idi];
+    }else{
+        return undefined;
+    }
+}
+
+function findPersonAt(cpf){
+    let idi = -1;
+    let idj = -1;
+    
+    for(let i=0;i<establishments.length;i++){
+        for(let j=0;j<establishments[i].customers.length;j++){
+            if(establishments[i].customers[j].cpf === cpf){
+                idi = i;
+                idj = j;
+                break;
+            }
+        }
+    }
+
+    if(idi !== -1 && idj !== -1){
+        return establishments[idi].customers[idj];
     }else{
         return undefined;
     }
@@ -34,9 +55,11 @@ function findPerson(idx,cpf){
 
 function verifyInfected(cpf){
     for(let i=0;i<establishments.length;i++){
-        const person = findPerson(idx,cpf);
-        if(person.infected){
-            return true;
+        const person = findPerson(i,cpf);
+        if(person){
+            if(person.infected){
+                return true;
+            }
         }
     }
 
@@ -46,7 +69,7 @@ function verifyInfected(cpf){
 function establishmentsList(cpf){
     const list = [];
     for(let i=0;i<establishments.length;i++){
-        for(let j=0;j<establjshments[i].customers.length;j++){
+        for(let j=0;j<establishments[i].customers.length;j++){
             if(establishments[i].customers[j].cpf === cpf){
                 list.push(i);
             }
@@ -58,7 +81,7 @@ function establishmentsList(cpf){
 
 function possibleInfecteds(cpf){
     const inf = [];
-    const person = findPerson(cpf);
+    const person = findPersonAt(cpf);
     const ids = establishmentsList(cpf);
     
 
@@ -79,7 +102,7 @@ module.exports = {
         response.send(establishments).status(200);
     },
     create(request,response){
-        const {name, password} = request.body.name;
+        const {name, password} = request.body;
         const id = establishments.length;
         const customers = [];
 
@@ -93,29 +116,29 @@ module.exports = {
         }
 
         if(findEstablishment(name)){
-            response.send({message: "Name was taken" }).status(400);
+            return response.send({message: "Name was taken" }).status(400);
         }
 
         // Hash password
-        const password = hash(password);
+        const passwordHash = hash(password);
 
         // Create establishment
-        const establishment = {id,name,password,customers};
+        const establishment = {id,name,password: passwordHash,customers};
         establishments.push(establishment);
 
         return response.send(establishment);
     },
     login(request,response){
-        const {name, password} = request.body.name;
+        const {name, password} = request.body;
         let establishment = findEstablishment(name);
 
-        if(idx === -1){
+        if(!establishment){
             return response.send({message: "Invalid name or password" }).status(400);
         }
 
-        const password = hash(password);
+        const passwordHash = hash(password);
 
-        if(password !== establishment.password){
+        if(passwordHash !== establishment.password){
             return response.send({message: "Invalid name or password" }).status(400);
         }
 
@@ -129,7 +152,7 @@ module.exports = {
     entrance(request,response){
         const {cpf,name, idx} = request.body;
 
-        const establishment = establishment[idx];
+        const establishment = establishments[idx];
         
         if(!establishment){
             return response.send({message: "Invalid establishment" }).status(400);
@@ -155,13 +178,13 @@ module.exports = {
             return response.send({message: "Invalid index or cpf" }).status(400);
         }
 
-        const establishment = findEstablishment[idx];
+        const establishment = establishments[idx];
         
         if(!establishment){
             return response.send({message: "Invalid establishment" }).status(400);
         }
 
-        const person = findPerson(cpf);
+        const person = findPerson(idx,cpf);
 
         if(!person){
             return response.send({message: "Invalid CPF" }).status(400);
@@ -176,4 +199,16 @@ module.exports = {
         }).status(200);
 
     },
+    customers(request,response){
+        const {idx} = request.body;
+
+        if(idx === undefined){
+            return response.send({message: "Invalid index" }).status(400);
+        }
+
+        const customers = establishments[idx].customers;
+
+        return response.send(customers);
+
+    }
 }

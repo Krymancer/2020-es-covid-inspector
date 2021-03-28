@@ -9,5 +9,6 @@ routes.post('/create',establishments.create);
 routes.post('/login',establishments.login);
 routes.post('/entrance',establishments.entrance);
 routes.post('/report',establishments.report);
+routes.post('/customers',establishments.customers);
 
 module.exports = routes;

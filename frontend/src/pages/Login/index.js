@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'
+import "./Login.css";
 
 function Login() {
   let history = useHistory();
@@ -13,17 +14,14 @@ function Login() {
   }
 
   return (
-    <>
-      <h1>
-        Tela de Login
-      </h1>
-      <button type="button" onClick={handleLogin}>
-        Ir para Dashboard
-      </button>
-      <button type="button" onClick={handleCadastro}>
-        Cadastrar
-      </button>
-    </>
+    <container>
+        <h1>Covid Inspector</h1>
+
+        <input id="name" placeholder="Nome"/>
+        <input id="password" placeholder="Senha"/>
+        <button className="btt btt-login" type="button" onClick={handleLogin}>Login</button>
+        <button className="btt btt-cad" type="button" onClick={handleCadastro}>Cadastrar</button>
+    </container>
   )
 }
 

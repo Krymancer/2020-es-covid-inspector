@@ -6,7 +6,7 @@ const routes = require('./routes');
 establishments = [];
 
 const app = express();
-const port = 3000;
+const port = 3030;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
