@@ -1,5 +1,5 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom'
+import React from "react";
+import { useHistory } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
@@ -15,14 +15,18 @@ function Login() {
 
   return (
     <container>
-        <h1>Covid Inspector</h1>
+      <h1>Covid Inspector</h1>
 
-        <input id="name" placeholder="Nome"/>
-        <input id="password" placeholder="Senha"/>
-        <button className="btt btt-login" type="button" onClick={handleLogin}>Login</button>
-        <button className="btt btt-cad" type="button" onClick={handleCadastro}>Cadastrar</button>
+      <input id="name" placeholder="Nome" />
+      <input id="password" placeholder="Senha" />
+      <button className="btt btt-login" type="button" onClick={handleLogin}>
+        Login
+      </button>
+      <button className="btt btt-cad" type="button" onClick={handleCadastro}>
+        Cadastrar
+      </button>
     </container>
-  )
+  );
 }
 
 export default Login;
