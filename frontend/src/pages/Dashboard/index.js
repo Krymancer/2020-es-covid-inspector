@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import "../../index.css";
 import logo from '../../assets/logo.png';
-=======
-import React from "react";
-import { useHistory } from "react-router-dom";
->>>>>>> 4878240da47dcc0ceec92785c10e7fdff20a3003
 
 function Dashboard() {
   let history = useHistory();
