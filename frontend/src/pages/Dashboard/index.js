@@ -1,5 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import "../../index.css";
+import logo from '../../assets/logo.png';
 
 function Dashboard() {
   let history = useHistory();
@@ -19,8 +21,11 @@ function Dashboard() {
   return (
     <>
       <div className="header">
-        <h1 className="title" >Dashboard</h1>
-        <div className="buttons">
+        <div className="logo-header">
+          <img className="logo-dashboard" src={logo} alt="Logo"/>
+          <h1 className="title">Dashboard</h1>
+        </div>
+        <div className="menu">
           <button className="client" type="button" onClick={handleCustomer}>Cliente</button>
           <button className="report" type="button" onClick={handleReport}>Reportar</button>
           <button className="logout" type="button" onClick={handleLogout}>Sair</button>
