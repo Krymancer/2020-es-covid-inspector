@@ -12,12 +12,12 @@ function Register() {
   }
 
   return (
-    <container>
+    <div className="container">
       <h1>Cadastro</h1>
       <input id="name" placeholder="Nome"/>
         <input id="password" placeholder="Senha"/>
       <button className="button register" type="button" onClick={handleCadastro}>Cadastrar</button>
-    </container>
+    </div>
   );
 }
 

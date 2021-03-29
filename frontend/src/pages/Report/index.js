@@ -12,11 +12,11 @@ function Register() {
   }
 
   return (
-    <container>
+    <div className="container">
       <h1>Reportar</h1>
       <input id="cpf" placeholder="CPF"/>
       <button className="button register" type="button" onClick={handleReport}>Reportar</button>
-    </container>
+    </div >
   );
 }
 

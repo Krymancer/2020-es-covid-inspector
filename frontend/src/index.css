@@ -15,7 +15,7 @@ code {
 
 /* Global Config */
 
-container{
+.container{
   background:#efefef;
   height: 100vh;
   display: flex;
