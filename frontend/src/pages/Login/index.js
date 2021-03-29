@@ -11,15 +11,22 @@ function Login() {
   const [password, setPassword] = useState('');
 
   async function handleLogin() {
-    history.push("/dashboard");
-    console.log("name:",name,"password:",password);
 
     const response = await api.post("/login",{
       name: name,
       password: password
     });
 
-    console.log("response: ", response.data);
+    const id = response.data.id;
+
+    if(id === undefined){
+      alert("Verifique os dados e tente novamente!");
+    }else{
+      history.push({
+        pathname: "/dashboard",
+        idx: id
+      });
+    }
   }
 
   function handleCadastro() {
@@ -32,8 +39,19 @@ function Login() {
           <img className="logo-login" src={logo} alt="Logo"/>
           <h1>Covid Inspector</h1>
         </div>
-        <input id="name" placeholder="Nome" value={name} onChange={event => setName(event.target.value)}/>
-        <input id="password" placeholder="Senha" value={password} onChange={event => setPassword(event.target.value)}/>
+        <input 
+          id="name" 
+          placeholder="Nome" 
+          value={name} 
+          onChange={event => setName(event.target.value)}
+        />
+        <input 
+          id="password" 
+          placeholder="Senha" 
+          type="password"
+          value={password} 
+          onChange={event => setPassword(event.target.value)}
+          />
         <button className="button login" type="button" onClick={handleLogin}>Login</button>
         <button className="button register" type="button" onClick={handleCadastro}>Cadastrar</button>
     </div>

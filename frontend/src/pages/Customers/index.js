@@ -1,5 +1,7 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useState} from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import api from '../../services/api';
+
 
 import "../../index.css";
 //import logo from '../../assets/logo.png';
@@ -7,15 +9,43 @@ import "../../index.css";
 function Register() {
   let history = useHistory();
 
-  function handleReport() {
-    history.push("/dashboard");
+  const [name, setName] = useState('');
+  const [cpf, setCpf] = useState('');
+
+  const idx = useLocation().idx || 0;
+
+  async function handleReport() {
+    const response = await api.post("/entrance",{
+      idx: idx,
+      cpf: cpf,
+      name: name,
+    });
+
+    if(response.data.id === undefined){
+      alert("Esta pessoa esta infectada!");
+    }
+
+    history.push({
+        pathname: "/dashboard",
+        idx: idx
+      });
   }
 
   return (
     <div className="container">
       <h1>Cliente</h1>
-      <input id="cpf" placeholder="CPF"/>
-      <input id="name" placeholder="Nome"/>
+      <input 
+        id="cpf" 
+        placeholder="CPF"
+        value={cpf} 
+        onChange={event => setCpf(event.target.value)}
+      />
+      <input 
+        id="name" 
+        placeholder="Nome"
+        value={name} 
+        onChange={event => setName(event.target.value)}
+      />
       <button className="button register" type="button" onClick={handleReport}>Adicionar</button>
     </div>
   );
