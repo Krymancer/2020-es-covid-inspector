@@ -8,10 +8,12 @@ function Dashboard() {
 
   function handleReport() {
     console.log("Report");
+    history.push("/report");
   }
 
   function handleCustomer() {
     console.log("Report");
+    history.push("/customers"); 
   }
 
   function handleLogout() {

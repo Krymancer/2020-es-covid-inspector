@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./pages/Login/index";
 import Register from "./pages/Register/index";
 import Dashboard from "./pages/Dashboard/index";
+import Report from "./pages/Report/index";
+import Customers from "./pages/Customers/index";
 
 function Routes() {
   return (
@@ -13,6 +15,8 @@ function Routes() {
         <Route exact path="/" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/dashboard" component={Dashboard} />
+        <Route path="/customers" component={Customers} />
+        <Route path="/report" component={Report} />
       </Switch>
     </Router>
   );

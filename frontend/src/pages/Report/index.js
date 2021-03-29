@@ -7,16 +7,15 @@ import "../../index.css";
 function Register() {
   let history = useHistory();
 
-  function handleCadastro() {
-    history.push("/");
+  function handleReport() {
+    history.push("/dashboard");
   }
 
   return (
     <container>
-      <h1>Cadastro</h1>
-      <input id="name" placeholder="Nome"/>
-        <input id="password" placeholder="Senha"/>
-      <button className="button register" type="button" onClick={handleCadastro}>Cadastrar</button>
+      <h1>Reportar</h1>
+      <input id="cpf" placeholder="CPF"/>
+      <button className="button register" type="button" onClick={handleReport}>Reportar</button>
     </container>
   );
 }
