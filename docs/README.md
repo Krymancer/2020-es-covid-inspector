@@ -5,7 +5,7 @@ Toda a documentação do projeto pode ser encontrada aqui, como também arquivos
 
 ## Tecnologias
 
-Apois discutirmos qual seriam as melhores tecnologias a serem usadas, optamos por utilizar javascript devido ao seu poder adicionado de sua facilidade e baixa curva de aprendizado. Decivimos utilizar um padrão de projeto que consta em usar uma API e consumir os dados da mesma em outra aplicação.
+Após discutirmos qual seriam as melhores tecnologias a serem usadas, optamos por utilizar javascript devido ao seu poder adicionado de sua facilidade e baixa curva de aprendizado. Decidimos utilizar um padrão de projeto que consta em usar uma API e consumir os dados da mesma em outra aplicação.
 
 Optamos por usar um framework em javascript para consumir os dados da API. (ver seção sobre arquitetura para mais informações).
 
@@ -15,7 +15,7 @@ Dividimos o projeto em duas parte a API que servira como backend, processando to
 
 A arquitetura consiste no padrão REST que é um padrão consolidado para desenvolvimento de API's no contexto de desenvolvimento web.
 
-Enquanto ao frontend optarmos por usar um framework em javascript para consumir e mostrar as informações
+Enquanto ao frontend optarmos por usar um framework em javascript para consumir e mostrar as informações.
 
 ## Levantamentos de Requisitos
 TODO
