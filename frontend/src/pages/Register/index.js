@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 
 import "../../index.css";
-//import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.png';
 
 function Register() {
   let history = useHistory();
@@ -20,7 +20,7 @@ function Register() {
     const id = response.data.id;
 
     if(id === undefined){
-      alert("Verifique os dados e tente novamente!");
+      alert(`Verifique os dados e tente novamente!\n${response.data.message}`);
     }else{
       history.push("/");
     }
@@ -29,7 +29,10 @@ function Register() {
 
   return (
     <div className="container">
-      <h1>Cadastro</h1>
+      <div className="login-header">
+          <img className="logo-login" src={logo} alt="Logo"/>
+          <h1>Registrar</h1>
+        </div>
       <input 
         id="name" 
         placeholder="Nome" 

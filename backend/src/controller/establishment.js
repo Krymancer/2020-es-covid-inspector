@@ -90,10 +90,12 @@ function possibleInfecteds(cpf){
             const test = establishments[ids[i]].customers[j]; 
             const diff = Math.abs(person.date - test.date);
             if(diff < 2,592e+8){
-                inf.push({ establishment: ids[i], personId: j });
+                inf.push(test);
             }
         }
     }
+
+    return inf;
 }
 
 
@@ -108,15 +110,15 @@ module.exports = {
 
         // Verifications
         if(!name){
-            return response.send({message: "Please provide an name" }).status(400);
+            return response.send({message: "Digite um nome!" }).status(400);
         }
 
-        if(password.length <= 3){
-            return response.send({message: "Password must be more than 3 characters" }).status(400);
+        if(password.length < 3){
+            return response.send({message: "A senha deve ter pelo menos 3 caracteres" }).status(400);
         }
 
         if(findEstablishment(name)){
-            return response.send({message: "Name was taken" }).status(400);
+            return response.send({message: "Nome em uso" }).status(400);
         }
 
         // Hash password
@@ -193,8 +195,7 @@ module.exports = {
         const infecteds = possibleInfecteds(person.cpf);
 
         establishments[idx].customers[person.id].infected = true;
-        return response.send({
-            establishment : establishment.customers, 
+        return response.send({ 
             infecteds: infecteds
         }).status(200);
 

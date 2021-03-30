@@ -22,7 +22,10 @@ function Dashboard() {
   }, [idx]);
 
   function handleReport() {
-    history.push("/report");
+    history.push({
+      pathname: "/report",
+      idx: idx
+    });
   }
 
   function handleCustomer() {

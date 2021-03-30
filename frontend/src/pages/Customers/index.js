@@ -4,7 +4,7 @@ import api from '../../services/api';
 
 
 import "../../index.css";
-//import logo from '../../assets/logo.png';
+import logo from '../../assets/logo.png';
 
 function Register() {
   let history = useHistory();
@@ -33,7 +33,10 @@ function Register() {
 
   return (
     <div className="container">
-      <h1>Cliente</h1>
+      <div className="login-header">
+          <img className="logo-login" src={logo} alt="Logo"/>
+          <h1>Cliente</h1>
+        </div>
       <input 
         id="cpf" 
         placeholder="CPF"
