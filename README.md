@@ -17,7 +17,7 @@ Devido a necessidade de verificar algumas necessidades e implementações para o
 
 No formulário foram feitas perguntas tais como a importância do software sendo uma ferramenta auxiliar no combate ao corona vírus até mesmo com perguntas mais específicas, sobre os dados que seriam repassados para o banco de dados da aplicação.
 
-O questionário (https://forms.gle/8v2EhX2Hp4uAx54Z7) teve o total de 93 respostas.
+O [questionário](https://forms.gle/8v2EhX2Hp4uAx54Z7) teve o total de 93 respostas.
 
 ## Equipe
 
