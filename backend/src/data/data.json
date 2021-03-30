@@ -1,0 +1,15 @@
+[
+    {
+        "id": 0,
+        "name": "Bar do Zé",
+        "password": 1251475389,
+        "customers": [
+            {
+                "id": 0,
+                "cpf": "1",
+                "name": "pedro",
+                "date": 1617124470666
+            }
+        ]
+    }
+]
