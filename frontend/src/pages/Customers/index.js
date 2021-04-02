@@ -1,6 +1,7 @@
 import React, { useState} from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import api from '../../services/api';
+import verifyCPF from '../../services/cpf';
 
 
 import "../../index.css";
@@ -15,14 +16,23 @@ function Register() {
   const idx = useLocation().idx || 0;
 
   async function handleReport() {
-    const response = await api.post("/entrance",{
-      idx: idx,
-      cpf: cpf,
-      name: name,
-    });
 
-    if(response.data.id === undefined){
-      alert("Esta pessoa esta infectada!");
+    if(verifyCPF(cpf)){
+
+      const sanitizedCpf = cpf.replace(/[^\d]+/g,'');	
+
+      const response = await api.post("/entrance",{
+        idx: idx,
+        cpf: sanitizedCpf,
+        name: name,
+      });
+
+      if(response.data.message !== undefined){
+        alert(response.data.message);
+      }
+
+    }else{
+      alert("CPF inválido!");
     }
 
     history.push({

@@ -58,6 +58,24 @@ function Dashboard() {
     return d;
   }
 
+  
+  function formatCPF(cpf){
+    if(cpf.length !== 11){
+      return cpf;
+    }
+
+    function formataCPF(cpf){
+      //retira os caracteres indesejados...
+      cpf = cpf.replace(/[^\d]/g, "");
+    
+      //realizar a formatação...
+        return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+    }
+
+    return formataCPF(cpf);
+  }
+
+
   return (
     <>
       <div className="header">
@@ -86,7 +104,7 @@ function Dashboard() {
               customers.map(customer => (
                 <tr key={customer.id}>
                   <td>{customer.name}</td>
-                  <td>{customer.cpf}</td>
+                  <td>{formatCPF(customer.cpf)}</td>
                   <td>{formatDate(customer.date)}</td>
                 </tr>
               )))  : (

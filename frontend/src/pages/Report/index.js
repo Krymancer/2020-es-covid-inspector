@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import api from '../../services/api';
+import verifyCPF from '../../services/cpf';
 
 import "../../index.css";
 import logo from '../../assets/logo.png';
@@ -12,19 +13,29 @@ function Register() {
 
   const idx = useLocation().idx || 0;
 
-
   async function handleReport() {
-    const response = await api.post("/report",{
-      idx: idx,
-      cpf: cpf
-    });
 
-    console.log(response.data,idx);
-    setCustomers(response.data.infecteds);
+    if(verifyCPF(cpf)){
+      const response = await api.post("/report",{
+        idx: idx,
+        cpf: cpf
+      });
+
+      if(response.data.message !== undefined){
+        alert(response.data.message);
+      }
+
+      setCustomers(response.data.infecteds);
+    }else{
+      alert("CPF inválido!");
+    } 
   }
 
   async function handleBack() {
-    history.push("/dashboard");
+    history.push({
+      pathname: "/dashboard",
+      idx: idx
+    });
   }
 
   function formatDate(date){
@@ -46,7 +57,22 @@ function Register() {
     return d;
   }
 
- 
+
+  function formatCPF(cpf){
+    if(cpf.length !== 11){
+      return cpf;
+    }
+
+    function formataCPF(cpf){
+      //retira os caracteres indesejados...
+      cpf = cpf.replace(/[^\d]/g, "");
+    
+      //realizar a formatação...
+        return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+    }
+
+    return formataCPF(cpf);
+  }
 
   return (
     <>
@@ -81,7 +107,7 @@ function Register() {
               customers.map(customer => (
                 <tr key={customer.id}>
                   <td>{customer.name}</td>
-                  <td>{customer.cpf}</td>
+                  <td>{formatCPF(customer.cpf)}</td>
                   <td>{formatDate(customer.date)}</td>
                 </tr>
               )))  : (
