@@ -12,13 +12,6 @@ O software em questão seria responsável por armazenar os dados pessoais dos cl
 ## Documentação
 Dentro do diretório docs contém todos os documentos sobre a documentação do projeto, assim como arquitetura, modelagem, levantamento de requisitos e demais funcionalidades escolhidas pela equipe.
 
-## Levantamento de requisitos
-Devido a necessidade de verificar algumas necessidades e implementações para o projeto, foi feito um formulário online para colher os requisitos para construção do projeto.
-
-No formulário foram feitas perguntas tais como a importância do software sendo uma ferramenta auxiliar no combate ao corona vírus até mesmo com perguntas mais específicas, sobre os dados que seriam repassados para o banco de dados da aplicação.
-
-O [questionário](https://forms.gle/8v2EhX2Hp4uAx54Z7) teve o total de 93 respostas.
-
 ## Equipe
 
  - José Ediberto do Nascimento Júnior 433423
