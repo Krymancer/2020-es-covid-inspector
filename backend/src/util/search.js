@@ -81,13 +81,15 @@ function possibleInfecteds(cpf){
     const inf = [];
     const person = findPersonAt(cpf);
     const ids = establishmentsList(cpf);
+    const timeDifference = 8.64e+7;
     
 
     for(let i=0;i<ids.length;i++){
         for(let j=0;j<establishments[ids[i]].customers.length;j++){
             const test = establishments[ids[i]].customers[j]; 
             const diff = Math.abs(person.date - test.date);
-            if(diff < 2,592e+8){
+            
+            if(diff < timeDifference){
                 inf.push(test);
             }
         }

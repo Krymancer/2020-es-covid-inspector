@@ -16,9 +16,12 @@ function Register() {
   async function handleReport() {
 
     if(verifyCPF(cpf)){
+
+      const sanitizedCpf = cpf.replace(/[^\d]+/g,'');	
+
       const response = await api.post("/report",{
         idx: idx,
-        cpf: cpf
+        cpf: sanitizedCpf
       });
 
       if(response.data.message !== undefined){
