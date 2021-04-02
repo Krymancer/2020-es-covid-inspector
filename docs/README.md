@@ -21,7 +21,7 @@ A arquitetura da API consiste no padrão REST que é um padrão consolidado para
 Enquanto ao frontend optámos por usar um framework em javascript para consumir e mostrar as informações. O framework utilizado foi o ReactJS, e partindo do framework utilizamos suas ferramentas para organizar as rotas que foram todas as páginas do programa, com cada rota contendo uma requisição diferente a API mencionada anteriormente e tratando a resposta em JSON também com ferramentas do framework
 
 ## UML 
-Informações sobre a UML porem ser encontradas no diretorio UML.
+Informações sobre a UML porem ser encontradas no diretorio [UML](https://github.com/Krymancer/2020-es-covid-inspector/tree/master/docs/UML).
 
 ## Pesquisa
 TODO

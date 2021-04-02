@@ -10,7 +10,7 @@ Dias depois, alguém do restaurante lhe avisa por telefone/e-mail que naquele di
 O software em questão seria responsável por armazenar os dados pessoais dos clientes para possível contato.
 
 ## Documentação
-Dentro do diretório docs contém todos os documentos sobre a documentação do projeto, assim como arquitetura, modelagem, levantamento de requisitos e demais funcionalidades escolhidas pela equipe.
+Dentro do diretório [docs](https://github.com/Krymancer/2020-es-covid-inspector/tree/master/docs) contém todos os documentos sobre a documentação do projeto, assim como arquitetura, modelagem, levantamento de requisitos e demais funcionalidades escolhidas pela equipe.
 
 ## Equipe
 
