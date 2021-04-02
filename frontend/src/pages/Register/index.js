@@ -17,10 +17,8 @@ function Register() {
       password: password
     });
 
-    const id = response.data.id;
-
-    if(id === undefined){
-      alert(`Verifique os dados e tente novamente!\n${response.data.message}`);
+    if(response.data.message !== undefined){
+      alert(response.data.message);
     }else{
       history.push("/");
     }

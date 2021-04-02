@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import verifyCPF from '../../services/cpf';
 
@@ -13,7 +13,7 @@ function Register() {
   const [name, setName] = useState('');
   const [cpf, setCpf] = useState('');
 
-  const idx = useLocation().idx || 0;
+  const idx = localStorage.getItem('idx');
 
   async function handleReport() {
 

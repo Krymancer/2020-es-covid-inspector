@@ -41,13 +41,13 @@ module.exports = {
         let establishment = findEstablishment(name);
 
         if(!establishment){
-            return response.send({message: "nome e/ou senha inválidos" }).status(400);
+            return response.send({message: "Nome e/ou senha inválidos" }).status(400);
         }
 
         const passwordHash = hash(password);
 
         if(passwordHash !== establishment.password){
-            return response.send({message: "nome e/ou senha inválidos" }).status(400);
+            return response.send({message: "Nome e/ou senha inválidos" }).status(400);
         }
 
         

@@ -17,15 +17,12 @@ function Login() {
       password: password
     });
 
-    const id = response.data.id;
-
-    if(id === undefined){
-      alert("Verifique os dados e tente novamente!");
+    if(response.data.message !== undefined){
+      alert(response.data.message);
     }else{
-      history.push({
-        pathname: "/dashboard",
-        idx: id
-      });
+      const id = response.data.id;
+      localStorage.setItem('idx',id);
+      history.push({pathname: "/dashboard"});
     }
   }
 

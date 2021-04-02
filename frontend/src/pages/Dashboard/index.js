@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import "../../index.css";
 import logo from '../../assets/logo.png';
 import api from '../../services/api';
@@ -8,7 +8,8 @@ function Dashboard() {
   let history = useHistory();
   const [customers,setCustomers] = useState([]);
 
-  const idx = useLocation().idx || 0;
+  const idx = localStorage.getItem('idx');
+  console.log(idx);
 
   useEffect(() => {
     async function loadCustomers(){
@@ -36,6 +37,7 @@ function Dashboard() {
   }
 
   function handleLogout() {
+    localStorage.removeItem('idx');
     history.push("/");
   }
 
