@@ -38,27 +38,37 @@ function Register() {
     history.push("/dashboard");
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    handleReport();
+  }
+
   return (
     <div className="container">
       <div className="login-header">
         <img className="logo-login" src={logo} alt="Logo" />
         <h1>Cliente</h1>
       </div>
-      <input
-        id="cpf"
-        placeholder="CPF"
-        value={cpf}
-        onChange={(event) => setCpf(event.target.value)}
-      />
-      <input
-        id="name"
-        placeholder="Nome"
-        value={name}
-        onChange={(event) => setName(event.target.value)}
-      />
-      <button className="button register" type="button" onClick={handleReport}>
-        Adicionar
-      </button>
+      <form onSubmit={handleSubmit}>
+        <input
+          id="cpf"
+          placeholder="CPF"
+          value={cpf}
+          onChange={(event) => setCpf(event.target.value)}
+        />
+        <input
+          id="name"
+          placeholder="Nome"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
+        <button
+          className="button register"
+          type="submit"
+        >
+          Adicionar
+        </button>
+      </form>
     </div>
   );
 }
