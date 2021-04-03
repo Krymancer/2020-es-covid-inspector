@@ -32,6 +32,10 @@ header {
   margin-left: 10px;
 }
 
+.botoes {
+  justify-content: center;
+}
+
 .botoes button {
   margin: 0.8rem;
   height: 2.6rem;
@@ -89,6 +93,11 @@ tr:nth-child(even) {
 
   .botoes {
     display: flex;
+    width: 100vw;
+  }
+
+  .botoes button {
+    min-width: 0px !important;
   }
 
   .dashboard-container {
