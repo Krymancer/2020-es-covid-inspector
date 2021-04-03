@@ -25,32 +25,35 @@ function Register() {
     }
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    handleCadastro();
+  }
+
   return (
     <div className="container">
       <div className="login-header">
         <img className="logo-login" src={logo} alt="Logo" />
         <h1>Registrar</h1>
       </div>
-      <input
-        id="name"
-        placeholder="Nome"
-        value={name}
-        onChange={(event) => setName(event.target.value)}
-      />
-      <input
-        id="password"
-        placeholder="Senha"
-        type="password"
-        value={password}
-        onChange={(event) => setPassword(event.target.value)}
-      />
-      <button
-        className="button register"
-        type="button"
-        onClick={handleCadastro}
-      >
-        Cadastrar
-      </button>
+      <form onSubmit={handleSubmit}>
+        <input
+          id="name"
+          placeholder="Nome"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
+        <input
+          id="password"
+          placeholder="Senha"
+          type="password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+        />
+        <button className="button register" type="submit">
+          Cadastrar
+        </button>
+      </form>
     </div>
   );
 }

@@ -31,13 +31,18 @@ function Login() {
     history.push("/register");
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    handleLogin();
+  }
+
   return (
     <div className="container">
       <div className="login-header">
         <img className="logo-login" src={logo} alt="Logo" />
         <h1>Covid Inspector</h1>
       </div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           id="name"
           placeholder="Nome"
@@ -51,7 +56,7 @@ function Login() {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-        <button className="login" type="submit" onClick={handleLogin}>
+        <button className="login" type="submit">
           Login
         </button>
         <button className="register" type="button" onClick={handleCadastro}>
