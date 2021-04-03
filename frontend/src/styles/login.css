@@ -1,0 +1,23 @@
+.login {
+  background: #98b638;
+  color: white;
+}
+
+.register {
+  background: #0f65af;
+  color: white;
+}
+
+.logo-login {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 0.8rem;
+}
+
+.login-header {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.22rem;
+  line-height: 100%;
+  margin-bottom: 1.8rem;
+}
