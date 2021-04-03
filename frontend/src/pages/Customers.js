@@ -14,6 +14,10 @@ function Register() {
 
   const idx = localStorage.getItem("idx");
 
+  if(idx === undefined || idx === null){
+    history.push("/");
+  }
+
   async function handleReport() {
     if (verifyCPF(cpf)) {
       const sanitizedCpf = cpf.replace(/[^\d]+/g, "");
@@ -31,10 +35,7 @@ function Register() {
       alert("CPF inválido!");
     }
 
-    history.push({
-      pathname: "/dashboard",
-      idx: idx,
-    });
+    history.push("/dashboard");
   }
 
   return (

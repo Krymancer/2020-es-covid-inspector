@@ -7,6 +7,7 @@ import Register from "./pages/Register.js";
 import Dashboard from "./pages/Dashboard.js";
 import Report from "./pages/Report.js";
 import Customers from "./pages/Customers.js";
+import NotFound from "./pages/NotFound.js";
 
 function Routes() {
   return (
@@ -17,6 +18,7 @@ function Routes() {
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/customers" component={Customers} />
         <Route path="/report" component={Report} />
+        <Route path="" component={NotFound} />
       </Switch>
     </Router>
   );

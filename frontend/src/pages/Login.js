@@ -12,7 +12,9 @@ function Login() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  async function handleLogin() {
+  async function handleLogin(e) {
+    e.preventDefault();
+
     const response = await api.post("/login", {
       name: name,
       password: password,
@@ -23,7 +25,7 @@ function Login() {
     } else {
       const id = response.data.id;
       localStorage.setItem("idx", id);
-      history.push({ pathname: "/dashboard" });
+      history.push("/dashboard");
     }
   }
 
@@ -37,7 +39,7 @@ function Login() {
         <img className="logo-login" src={logo} alt="Logo" />
         <h1>Covid Inspector</h1>
       </div>
-      <form>
+      <form onSubmit={handleLogin}>
         <input
           id="name"
           placeholder="Nome"

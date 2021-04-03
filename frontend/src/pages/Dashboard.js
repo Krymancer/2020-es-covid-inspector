@@ -11,9 +11,16 @@ function Dashboard() {
   const [customers, setCustomers] = useState([]);
 
   const idx = localStorage.getItem("idx");
-  console.log(idx);
+
+  if(idx === undefined || idx === null){
+    history.push("/");
+  }
 
   useEffect(() => {
+    if(idx === undefined || idx === null){
+      return(<></>);
+    }
+
     async function loadCustomers() {
       const response = await api.post("customers", {
         idx: idx,
@@ -25,17 +32,11 @@ function Dashboard() {
   }, [idx]);
 
   function handleReport() {
-    history.push({
-      pathname: "/report",
-      idx: idx,
-    });
+    history.push("/report");
   }
 
   function handleCustomer() {
-    history.push({
-      pathname: "/customers",
-      idx: idx,
-    });
+    history.push("/customers");
   }
 
   function handleLogout() {
