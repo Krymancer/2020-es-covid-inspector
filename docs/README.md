@@ -23,5 +23,9 @@ Enquanto ao frontend optámos por usar um framework em javascript para consumir 
 ## UML 
 Informações sobre a UML porem ser encontradas no diretorio [UML](https://github.com/Krymancer/2020-es-covid-inspector/tree/master/docs/UML).
 
-## Pesquisa
-TODO
+## Desing
+Informações sobre o desing podem ser encontradas no diretorio [design](https://github.com/Krymancer/2020-es-covid-inspector/tree/master/docs/design).
+
+
+## Feedback
+/* Em adamento */
