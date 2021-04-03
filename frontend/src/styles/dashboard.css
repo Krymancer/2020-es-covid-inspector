@@ -1,0 +1,97 @@
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 10vh;
+  background: #efefef;
+  line-height: 100%;
+}
+
+.logo-header {
+  display: flex;
+  flex-direction: row;
+  line-height: 100%;
+}
+
+.logo-dashboard {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.title {
+  background: #efefef;
+  text-align: center;
+  vertical-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+}
+
+.botoes button {
+  margin: 0.8rem;
+  height: 2.6rem;
+  min-width: 80px;
+}
+
+.logout {
+  background: #999797;
+  color: white;
+}
+
+.report {
+  background: #98b638;
+  color: white;
+}
+
+.client {
+  background: #0f65af;
+  color: white;
+}
+
+.dashboard-container {
+  background: #efefef;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+@media (max-width: 778px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20vh !important;
+    padding-top: 1rem;
+  }
+
+  .botoes {
+    display: flex;
+  }
+
+  .dashboard-container {
+    height: 80vh !important;
+  }
+}
