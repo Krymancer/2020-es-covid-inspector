@@ -37,29 +37,27 @@ function Login() {
         <img className="logo-login" src={logo} alt="Logo" />
         <h1>Covid Inspector</h1>
       </div>
-      <input
-        id="name"
-        placeholder="Nome"
-        value={name}
-        onChange={(event) => setName(event.target.value)}
-      />
-      <input
-        id="password"
-        placeholder="Senha"
-        type="password"
-        value={password}
-        onChange={(event) => setPassword(event.target.value)}
-      />
-      <button className="login" type="button" onClick={handleLogin}>
-        Login
-      </button>
-      <button
-        className="register"
-        type="button"
-        onClick={handleCadastro}
-      >
-        Cadastrar
-      </button>
+      <form>
+        <input
+          id="name"
+          placeholder="Nome"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
+        <input
+          id="password"
+          placeholder="Senha"
+          type="password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+        />
+        <button className="login" type="submit" onClick={handleLogin}>
+          Login
+        </button>
+        <button className="register" type="button" onClick={handleCadastro}>
+          Cadastrar
+        </button>
+      </form>
     </div>
   );
 }
