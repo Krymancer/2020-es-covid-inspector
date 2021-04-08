@@ -54,10 +54,10 @@ function Login() {
           onChange={(event) => setPassword(event.target.value)}
         />
         <button className="login" type="submit">
-          Login
+          Entrar
         </button>
         <button className="register" type="button" onClick={handleCadastro}>
-          Cadastrar
+          Cadastrar empresa
         </button>
       </form>
     </div>

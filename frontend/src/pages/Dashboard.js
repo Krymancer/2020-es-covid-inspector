@@ -91,11 +91,11 @@ function Dashboard() {
       <header>
         <div className="logo-header">
           <img className="logo-dashboard" src={logo} alt="Logo" />
-          <h1 className="title">Dashboard</h1>
+          <h1 className="title">Lista de Clientes</h1>
         </div>
         <div className="botoes">
           <button className="client" type="button" onClick={handleCustomer}>
-            Cliente
+            Cadastrar cliente
           </button>
           <button className="report" type="button" onClick={handleReport}>
             Reportar
