@@ -28,4 +28,8 @@ Informações sobre o desing podem ser encontradas no diretorio [design](https:/
 
 
 ## Feedback
-/* Em adamento */
+Como no levantamento de requisitos, fizemos também um formulário para entender como os usuários se sairiam usando a primeira versão do nosso protótipo.
+
+Nele foi abordado assuntos como usabilidade, inconsistência dos dados e um campo mais aberto para sugestões de melhorias.
+
+O [questinário](https://forms.gle/ayK4CufWtA3Z3Qg4A) teve o total de 10 respostas, onde percebemos alguns pontos que ainda precisavam de melhorias para tornar o protótipo mais intuitivo, também foram sugeridas algumas funcionalidades que posteriormente podem ser adicionadas em novas versões do projeto.
